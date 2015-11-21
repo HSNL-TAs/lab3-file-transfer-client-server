@@ -51,3 +51,7 @@ Server and client should keep connected unless user inputs `.exit`
 Hint
 ==
 Use `send/recv` to send and receive informations.
+
+Deadline
+==
+If your team don't finish the lab in the class, you can still demonstrate this lab when TA time.
