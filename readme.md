@@ -50,7 +50,7 @@ Server and client should keep connected unless user inputs `.exit`
 
 Hint
 ==
-Use `send/recv` to send and receive informations.
+Use `read/write` to send and receive informations.
 
 Deadline
 ==
