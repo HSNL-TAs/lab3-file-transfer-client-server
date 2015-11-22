@@ -12,6 +12,7 @@ Requirements
 Server
 ==
 You should implement following functions in your server.
+- User can assign port number which the server bind.  
 - Returns files list to client when the client connects immediately to the server.  
 
 **For example:**
@@ -27,7 +28,7 @@ homework.pdf
 network.jpg
 ```
 - Returns files which client wants to download.
-- Server should return `file not found.` if a specified file is not existed.
+
 
 **For example:**
 
@@ -41,6 +42,7 @@ _ # user can continue to send download request.
 
 Client
 ==
+- User can assign port number and ip address to connect the server.
 - Support user inputs the `file name` to download file from server, per file per input.  
 - Create a `/download` folder to store downloaded files.
 - Input `.exit` to disconnect from server. 
