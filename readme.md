@@ -20,7 +20,7 @@ Server
 ==
 You should implement following functions in your server.
 - The server should uses port `8888`  
-- Returns files list to client when the client connects immediately to the server.  
+- Returns files list to client when the client connects immediately to the server.  (We have provided this function which scans all the file under the same directory.)
 
 **For example:**
 
