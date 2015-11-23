@@ -10,8 +10,8 @@
 
 void client_fun (int sockfd) {
     char filename[MAXSIZE+1];
-	  char recvline[MAXSIZE+1]; /* variable to store data from server*/
-	  char path[MAXSIZE+1];
+    char recvline[MAXSIZE+1]; /* variable to store data from server*/
+    char path[MAXSIZE+1];
     int fileSize = 0, count = 0, n = 0;
     FILE *fp;
 
@@ -19,10 +19,10 @@ void client_fun (int sockfd) {
     sprintf(path, "./Download");
     mkdir(path, S_IRWXU|S_IRWXG|S_IROTH|S_IXOTH);
 	
-  	/*
-  		TODO:
-  		Read file list from server.
-  	*/
+    /*
+        TODO:
+        Read file list from server.
+    */
 
     printf("-----------\nEnter the filename:\n");
     while ((n = scanf(" %s", filename)) > 0) {
@@ -30,10 +30,10 @@ void client_fun (int sockfd) {
             break;
         }
 
-    		/**
-    			TODO:
-    			Send requested fileName to server.
-    		**/
+        /**
+            TODO:
+            Send requested fileName to server.
+        **/
 
         /*receive start message from server*/
         read(sockfd, recvline, MAXSIZE);
@@ -45,7 +45,7 @@ void client_fun (int sockfd) {
 
         /*receive file*/
         memset(path, '\0', MAXSIZE+1);
-		    n = 0;
+        n = 0;
         sprintf(path, "./Download/%s", filename);
         if ((fp = fopen(path, "wb+")) == NULL) {
             printf("Fail to allocate memory\n");
@@ -54,21 +54,20 @@ void client_fun (int sockfd) {
             while ((count += n) < fileSize) {
                 memset(recvline, '\0', MAXSIZE+1);
                 
-        				/**
-        					TODO:
-        					Receive data from server and store it into recvline variable using read function.
-        				**/
+                /**
+                    TODO:
+                    Receive data from server and store it into recvline variable using read function.
+                **/
 				
-        				/* write file to local disk.*/
+                /* write file to local disk.*/
                 fwrite(&recvline, sizeof(char), n, fp);
             }
             fclose(fp);
-      			/*receive download complete message*/
-      			memset(recvline, '\0', MAXSIZE+1);
-      			read(sockfd, recvline, MAXSIZE);
-      			printf("%s", recvline);
-		    }
-        
+            /*receive download complete message*/
+            memset(recvline, '\0', MAXSIZE+1);
+            read(sockfd, recvline, MAXSIZE);
+            printf("%s", recvline);
+        }
     }
     printf("socket closed!\n");
 }
@@ -98,6 +97,6 @@ int main (int argc, char **argv) {
     }
 
     client_fun(sockfd);
-	  close(sockfd);
+    close(sockfd);
     return 0;
 }
