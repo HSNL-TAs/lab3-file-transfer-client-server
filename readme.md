@@ -60,7 +60,8 @@ Server and client should keep connected unless user inputs `.exit`
 Hint
 ==
 Use `read/write` to send and receive informations.
+Understan how to use `argv`.
 
 Deadline
 ==
-If your team don't finish the lab in the class, you can still demonstrate this lab when TA time.
+If your team don't finish the lab in the class, you can still demonstrate this lab when TA time (14:00 ~ 17:00 on Wed)
