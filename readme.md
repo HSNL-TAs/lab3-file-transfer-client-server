@@ -3,7 +3,7 @@ Today's mission
 ==
 You will need to write simple file transfer client and server in language `C`.  
 Please modify to the [sample code](https://github.com/HSNL-TAs/lab3-file-transfer-client-server/tree/master/sample) to achieve this goal.  
-Fill in your own code by following the hint in code.
+Fill in your own code by following the hint in the code.
 ```
 /**
   TODO:
@@ -15,6 +15,23 @@ Requirements
 ==
 [Requirement of Server](#server)  
 [Requirement of Client](#client)
+
+Compile with makefile
+==
+Makefile
+```
+all: server.c client.c
+	gcc server.c -o server
+	gcc client.c -o client
+
+clean:
+	rm -rf server
+	rm -rf client
+```
+compile  
+```sh
+$ make
+```
 
 Server
 ==
@@ -64,4 +81,9 @@ Understan how to use `argv`.
 
 Deadline
 ==
-If your team don't finish the lab in the class, you can still demonstrate this lab when TA time (14:00 ~ 17:00 on Wed)
+If your team don't finish the lab in the class, you can still demonstrate this lab when TA time (14:00 ~ 17:00 on Wed)  
+- Deadline: 100%, before 2015/11/27
+- Deadline: 80%, before 2015/12/4
+- Deadline: 60%, before 2015/12/11
+- After 2015/12/11, your submission is not acc
+
