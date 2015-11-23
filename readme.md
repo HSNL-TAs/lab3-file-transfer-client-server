@@ -42,7 +42,7 @@ _ # user can continue to send download request.
 
 Client
 ==
-- User can assign port ip address to connect the server.
+- User can assign ip address to connect the server with command line argument.
 - Support user inputs the `file name` to download file from server, per file per input.  
 - Create a `/download` folder to store downloaded files.
 - Input `.exit` to disconnect from server. 
