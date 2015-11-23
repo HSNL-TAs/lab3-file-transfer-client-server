@@ -87,3 +87,8 @@ If your team don't finish the lab in the class, you can still demonstrate this l
 - Deadline: 60%, before 2015/12/11
 - After 2015/12/11, your submission is not accepted.
 
+Problems
+==
+Filing any problem in [issues](https://github.com/HSNL-TAs/lab3-file-transfer-client-server/issues) or nthu ilms is welcome.
+
+
