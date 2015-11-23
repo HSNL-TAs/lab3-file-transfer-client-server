@@ -85,5 +85,5 @@ If your team don't finish the lab in the class, you can still demonstrate this l
 - Deadline: 100%, before 2015/11/27
 - Deadline: 80%, before 2015/12/4
 - Deadline: 60%, before 2015/12/11
-- After 2015/12/11, your submission is not acc
+- After 2015/12/11, your submission is not accepted.
 
