@@ -39,7 +39,10 @@ void download_fun (int sockfd) {
         }
         memset(buf, '\0', MAXSIZE+1);
         sprintf(buf, "%s\n", ent->d_name);
-        /*write a filename to client*/
+        /*
+        	TODO
+        	write a filename to client
+        */
 		
     }
 
