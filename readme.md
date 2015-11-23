@@ -2,7 +2,14 @@
 Today's mission
 ==
 You will need to write simple file transfer client and server in language `C`.  
-Please modify to the [sample code](#) to achieve this goal.
+Please modify to the [sample code](https://github.com/HSNL-TAs/lab3-file-transfer-client-server/tree/master/sample) to achieve this goal.  
+Fill in your own code by following the hint in code.
+```
+/**
+  TODO:
+  print something here.
+**/
+```
 
 Requirements
 ==
@@ -19,7 +26,7 @@ You should implement following functions in your server.
 
 ```sh
 # Client side
-$ ./client
+$ ./client 127.0.0.1
 [✓] Connect to server.
 [✓] Server reply!
 Files on server
