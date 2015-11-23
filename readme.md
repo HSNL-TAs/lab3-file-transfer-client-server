@@ -76,8 +76,8 @@ Server and client should keep connected unless user inputs `.exit`
 
 Hint
 ==
-Use `read/write` to send and receive informations.
-Understan how to use `argv`.
+- Use `read/write` to send and receive informations.
+- Understand how to use `argv`.
 
 Deadline
 ==
