@@ -27,7 +27,7 @@ void download_fun (int sockfd) {
         printf("write failed!\n");
     }
 
-	  /*travelling files and sending to client*/
+    /*travelling files and sending to client*/
     if ((pDir=opendir("./")) == NULL) {
         printf("open dir failed\n");
         return;
@@ -39,24 +39,22 @@ void download_fun (int sockfd) {
         }
         memset(buf, '\0', MAXSIZE+1);
         sprintf(buf, "%s\n", ent->d_name);
-		    /*write a filename to client*/
+        /*write a filename to client*/
 		
     }
 
     closedir(pDir);
-  	/*End of travelling files and sending to client*/
-	
-	
+    /*End of travelling files and sending to client*/
+
     while ((n = read(sockfd, filename, MAXSIZE)) > 0) {
-		    /*do string comparison*/
+        /*do string comparison*/
         if (strcmp(filename, ".exit") == 0) {
             break;
         }
         fp = fopen(filename, "rb+");
         if (fp) {
-			      /*send start message*/
-            
-			      memset(buf, '\0', MAXSIZE+1); /*clean buff*/
+            /*send start message*/
+            memset(buf, '\0', MAXSIZE+1); /*clean buff*/
             sprintf(buf, "Downloading %s...\n", filename);
             if (write(sockfd, buf, MAXSIZE) == -1) {
                 printf("send failed!");
@@ -67,28 +65,28 @@ void download_fun (int sockfd) {
             fseek(fp, 0, SEEK_END);
             fileSize = ftell(fp);
             rewind(fp);
-			      /*end of get file size, store in fileSize.*/
+            /*end of get file size, store in fileSize.*/
 			
             memset(buf, '\0', MAXSIZE+1);
             sprintf(buf, "%d\n", fileSize);
 
             /**
-				      TODO:
-				      Send file size to client.
-			      **/
+                TODO:
+                Send file size to client.
+            **/
 
             byteNum = 0;
             /*read file and send to client*/
             while ((count += byteNum) < fileSize) {
                 memset(buf, '\0', MAXSIZE+1);
                 /*Read local file to buf*/
-				        byteNum = fread(&buf, sizeof(char), MAXSIZE, fp);
+                byteNum = fread(&buf, sizeof(char), MAXSIZE, fp);
 				
-        				/**
-        					TODO:
-        					send buf variable(file data) to client.
-        					do error detection if writing to client failed.
-        				**/
+                /**
+                    TODO:
+                    send buf variable(file data) to client.
+                    do error detection if writing to client failed.
+                **/
                
             }
 
@@ -96,13 +94,13 @@ void download_fun (int sockfd) {
 
             /*send download successful message*/
             /*sleep for a while.*/
-			      sleep(1);
+            sleep(1);
             memset(buf, '\0', MAXSIZE+1);
             sprintf(buf, "%s", "Download successfully!\n");
             write(sockfd, buf, MAXSIZE);
         }
         else {
-			      /* fp is null*/
+            /* fp is null*/
             write(sockfd, fail, strlen(fail));
         }
     }
@@ -114,8 +112,8 @@ void download_fun (int sockfd) {
 
 int main(int argc, char **argv) {
     int listenid; /*listen socketfd*/
-  	int clientfd /*accepted client socketfd*/
-  	int port;
+    int clientfd /*accepted client socketfd*/
+    int port;
     socklen_t clilen;
     struct sockaddr_in servaddr, cliaddr;
 
@@ -125,26 +123,26 @@ int main(int argc, char **argv) {
     servaddr.sin_addr.s_addr = htonl(INADDR_ANY);
     servaddr.sin_port = /*Bind port on 8888*/;
 	
-  	/**
-  		TODO:
-  		bind port
-  	**/
+    /**
+        TODO:
+        bind port
+    **/
   	
-  	/**
-  		TODO:
-  		listen socket
-  	**/
+    /**
+        TODO:
+        listen socket
+    **/
 	
     clilen = sizeof(struct sockaddr_in);
     for (;;) {
-    		/**
-    			TODO:
-    			waiting for a client using accept function
-    		**/
+        /**
+            TODO:
+            waiting for a client using accept function
+        **/
 		
 		
         download_fun(clientfd);
-     }
+    }
 
-     return 0;
+    return 0;
 }
